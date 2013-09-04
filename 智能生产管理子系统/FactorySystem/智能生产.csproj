@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8FADF478-DF70-445A-A76F-BE020330518B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FactorySystem</RootNamespace>
+    <AssemblyName>智能生产系统</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>5.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="fastJSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\程序备份\seriport单机完整版\seriport\seriport\seriport\seriport\bin\Debug\fastJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="public\indexinfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="public\ConfigDB.cs" />
+    <Compile Include="public\FOrders.cs" />
+    <Compile Include="frmSysConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSysConfig.Designer.cs">
+      <DependentUpon>frmSysConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="public\HttpDownloader.cs" />
+    <Compile Include="public\FProduct.cs" />
+    <Compile Include="public\Product.cs" />
+    <Compile Include="public\PcClass.cs" />
+    <Compile Include="New_Mainfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_Mainfrm.Designer.cs">
+      <DependentUpon>New_Mainfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProducing.designer.cs">
+      <DependentUpon>frmProducing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmSysConfig.resx">
+      <DependentUpon>frmSysConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New_Mainfrm.resx">
+      <DependentUpon>New_Mainfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProducing.resx">
+      <DependentUpon>frmProducing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProducedList.resx">
+      <DependentUpon>frmProducedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTiebiao.resx">
+      <DependentUpon>frmTiebiao.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="public\PubDelegate.cs" />
+    <Compile Include="public\UDPServer.cs" />
+    <Compile Include="frmProducedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProducedList.designer.cs">
+      <DependentUpon>frmProducedList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="public\RestUrl.cs" />
+    <Compile Include="public\rfidOperate\AudioAlert.cs" />
+    <Compile Include="public\rfidOperate\IDataTransfer.cs" />
+    <Compile Include="public\rfidOperate\Rmu900RFIDHelper.cs" />
+    <Compile Include="public\rfidOperate\SerialPortDataTransfer.cs" />
+    <Compile Include="public\seriportClass.cs" />
+    <Compile Include="public\stasticClass.cs" />
+    <Compile Include="frmTiebiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTiebiao.Designer.cs">
+      <DependentUpon>frmTiebiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="public\zigbeeHelper.cs" />
+    <Compile Include="public\zigbeeInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\查询.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\删除.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\修改.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\增加.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smart生产.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未命名2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SMart生产小字.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="5.ico" />
+    <Content Include="bin\Debug\alert.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

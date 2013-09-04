@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9B9680E-81AC-4B73-821D-DB83539BEDB3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InventoryMSystem</RootNamespace>
+    <AssemblyName>InventoryMSystem</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.1.1.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>5.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Db4objects.Db4o, Version=8.0.224.15975, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="fastJSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\fastJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Public\ConfigDB.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBarCodeProduce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBarCodeProduce.Designer.cs">
+      <DependentUpon>frmBarCodeProduce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEditEPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEditEPC.Designer.cs">
+      <DependentUpon>frmEditEPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInventoryResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInventoryResult.Designer.cs">
+      <DependentUpon>frmInventoryResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNewOrder.Designer.cs">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProductManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProductManage.Designer.cs">
+      <DependentUpon>frmProductManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmStorageManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmStorageManage.Designer.cs">
+      <DependentUpon>frmStorageManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSysSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSysSetting.Designer.cs">
+      <DependentUpon>frmSysSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTakeOutInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTakeOutInventory.Designer.cs">
+      <DependentUpon>frmTakeOutInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Public\HttpDownloader.cs" />
+    <Compile Include="Public\system_class\Order.cs" />
+    <Compile Include="Public\system_class\Product.cs" />
+    <Compile Include="Public\system_class\ProductName.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBarCodeProduce.resx">
+      <DependentUpon>frmBarCodeProduce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEditEPC.resx">
+      <DependentUpon>frmEditEPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInventoryResult.resx">
+      <DependentUpon>frmInventoryResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNewOrder.resx">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProductManage.resx">
+      <DependentUpon>frmProductManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmStorageManage.resx">
+      <DependentUpon>frmStorageManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSysSetting.resx">
+      <DependentUpon>frmSysSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTakeOutInventory.resx">
+      <DependentUpon>frmTakeOutInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSerialPortConfig.resx">
+      <DependentUpon>frmSerialPortConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProductManageAdd.resx">
+      <DependentUpon>frmProductManageAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="readTagNoneStopTest.resx">
+      <DependentUpon>readTagNoneStopTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Public\encrypt.cs" />
+    <Compile Include="Public\InvokeDic.cs" />
+    <Compile Include="Public\IRefreshDGV.cs" />
+    <Compile Include="Public\PubDelegate.cs" />
+    <Compile Include="Public\RFIDHelper.cs" />
+    <Compile Include="Public\rfidOperate\IRfidOperateUnit.cs" />
+    <Compile Include="Public\rfidOperate\operateAction.cs" />
+    <Compile Include="Public\rfidOperate\operateMessage.cs" />
+    <Compile Include="Public\rfidOperate\rfidOperateUnitBase.cs" />
+    <Compile Include="Public\rfidOperate\rfidOperateUnit.cs" />
+    <Compile Include="Public\StaticSerialPort.cs" />
+    <Compile Include="Forms\frmSerialPortConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSerialPortConfig.Designer.cs">
+      <DependentUpon>frmSerialPortConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="readTagNoneStopTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="readTagNoneStopTest.Designer.cs">
+      <DependentUpon>readTagNoneStopTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestUrl.cs" />
+    <Compile Include="Public\serialPortConfig.cs" />
+    <Compile Include="Forms\frmProductManageAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProductManageAdd.Designer.cs">
+      <DependentUpon>frmProductManageAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Public\staticClass.cs" />
+    <Compile Include="Public\system_class\tagID.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="5.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
