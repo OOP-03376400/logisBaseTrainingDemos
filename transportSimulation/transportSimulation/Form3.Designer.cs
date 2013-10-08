@@ -29,78 +29,82 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblLat = new System.Windows.Forms.Label();
+            this.lblLng = new System.Windows.Forms.Label();
+            this.lblCurrentRoad = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDestnation = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.lblCarID = new System.Windows.Forms.Label();
+            this.btnRoad1 = new System.Windows.Forms.Button();
+            this.btnRoad2 = new System.Windows.Forms.Button();
+            this.btnStartPoint = new System.Windows.Forms.Button();
+            this.btnPre = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnRestart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 89);
+            this.label1.Location = new System.Drawing.Point(225, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "当前位置:";
+            this.label1.Text = "当前道路:";
             // 
-            // label2
+            // lblLat
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 12);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "116.118";
+            this.lblLat.AutoSize = true;
+            this.lblLat.Location = new System.Drawing.Point(293, 130);
+            this.lblLat.Name = "lblLat";
+            this.lblLat.Size = new System.Drawing.Size(47, 12);
+            this.lblLat.TabIndex = 1;
+            this.lblLat.Text = "116.118";
             // 
-            // label3
+            // lblLng
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(169, 133);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "39.456";
+            this.lblLng.AutoSize = true;
+            this.lblLng.Location = new System.Drawing.Point(351, 130);
+            this.lblLng.Name = "lblLng";
+            this.lblLng.Size = new System.Drawing.Size(41, 12);
+            this.lblLng.TabIndex = 1;
+            this.lblLng.Text = "39.456";
             // 
-            // label4
+            // lblCurrentRoad
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 19F);
-            this.label4.Location = new System.Drawing.Point(109, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 26);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "朝阳北路";
+            this.lblCurrentRoad.AutoSize = true;
+            this.lblCurrentRoad.Font = new System.Drawing.Font("宋体", 19F);
+            this.lblCurrentRoad.Location = new System.Drawing.Point(291, 79);
+            this.lblCurrentRoad.Name = "lblCurrentRoad";
+            this.lblCurrentRoad.Size = new System.Drawing.Size(116, 26);
+            this.lblCurrentRoad.TabIndex = 2;
+            this.lblCurrentRoad.Text = "朝阳北路";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(46, 133);
+            this.label5.Location = new System.Drawing.Point(228, 130);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 0;
             this.label5.Text = "GPS信息:";
             // 
-            // button1
+            // btnDestnation
             // 
-            this.button1.Location = new System.Drawing.Point(445, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 58);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "通州火车站";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDestnation.Location = new System.Drawing.Point(445, 89);
+            this.btnDestnation.Name = "btnDestnation";
+            this.btnDestnation.Size = new System.Drawing.Size(96, 58);
+            this.btnDestnation.TabIndex = 3;
+            this.btnDestnation.Text = "通州火车站";
+            this.btnDestnation.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 19F);
-            this.label6.Location = new System.Drawing.Point(308, 105);
+            this.label6.Location = new System.Drawing.Point(164, 101);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 26);
             this.label6.TabIndex = 1;
@@ -115,48 +119,87 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "车牌号:";
             // 
-            // label8
+            // lblCarID
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("宋体", 19F);
-            this.label8.Location = new System.Drawing.Point(108, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 26);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "京A12345";
+            this.lblCarID.AutoSize = true;
+            this.lblCarID.Font = new System.Drawing.Font("宋体", 19F);
+            this.lblCarID.Location = new System.Drawing.Point(108, 22);
+            this.lblCarID.Name = "lblCarID";
+            this.lblCarID.Size = new System.Drawing.Size(116, 26);
+            this.lblCarID.TabIndex = 0;
+            this.lblCarID.Text = "京A12345";
             // 
-            // button2
+            // btnRoad1
             // 
-            this.button2.Location = new System.Drawing.Point(268, 166);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 77);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "物资学院南路";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRoad1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRoad1.Location = new System.Drawing.Point(253, 167);
+            this.btnRoad1.Name = "btnRoad1";
+            this.btnRoad1.Size = new System.Drawing.Size(139, 77);
+            this.btnRoad1.TabIndex = 4;
+            this.btnRoad1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnRoad2
             // 
-            this.button3.Location = new System.Drawing.Point(268, 274);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 77);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "北关路";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnRoad2.Location = new System.Drawing.Point(253, 275);
+            this.btnRoad2.Name = "btnRoad2";
+            this.btnRoad2.Size = new System.Drawing.Size(139, 77);
+            this.btnRoad2.TabIndex = 4;
+            this.btnRoad2.UseVisualStyleBackColor = true;
+            // 
+            // btnStartPoint
+            // 
+            this.btnStartPoint.Location = new System.Drawing.Point(36, 79);
+            this.btnStartPoint.Name = "btnStartPoint";
+            this.btnStartPoint.Size = new System.Drawing.Size(109, 63);
+            this.btnStartPoint.TabIndex = 5;
+            this.btnStartPoint.UseVisualStyleBackColor = true;
+            // 
+            // btnPre
+            // 
+            this.btnPre.Location = new System.Drawing.Point(36, 388);
+            this.btnPre.Name = "btnPre";
+            this.btnPre.Size = new System.Drawing.Size(75, 23);
+            this.btnPre.TabIndex = 6;
+            this.btnPre.Text = "<- 返回";
+            this.btnPre.UseVisualStyleBackColor = true;
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(641, 339);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.TabIndex = 7;
+            this.btnStop.Text = "停止";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Visible = false;
+            // 
+            // btnRestart
+            // 
+            this.btnRestart.Location = new System.Drawing.Point(546, 388);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(75, 23);
+            this.btnRestart.TabIndex = 8;
+            this.btnRestart.Text = "重新开始";
+            this.btnRestart.UseVisualStyleBackColor = true;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 428);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnRestart);
+            this.Controls.Add(this.btnStop);
+            this.Controls.Add(this.btnPre);
+            this.Controls.Add(this.btnStartPoint);
+            this.Controls.Add(this.btnRoad2);
+            this.Controls.Add(this.btnRoad1);
+            this.Controls.Add(this.btnDestnation);
+            this.Controls.Add(this.lblCurrentRoad);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblLng);
+            this.Controls.Add(this.lblLat);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblCarID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Name = "Form3";
@@ -169,15 +212,19 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblLat;
+        private System.Windows.Forms.Label lblLng;
+        private System.Windows.Forms.Label lblCurrentRoad;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDestnation;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblCarID;
+        private System.Windows.Forms.Button btnRoad1;
+        private System.Windows.Forms.Button btnRoad2;
+        private System.Windows.Forms.Button btnStartPoint;
+        private System.Windows.Forms.Button btnPre;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnRestart;
     }
 }

@@ -12,41 +12,96 @@ namespace transportSimulation
 {
     public partial class Form1 : Form
     {
+        bool bGetCarID = true;
+        bool bGetGPS = false;
+
+        Timer timer = null;
         public Form1()
         {
             InitializeComponent();
 
-            //InitialCarList(4, this.Width, 40, 40);
+            this.btnNext.Enabled = false;
+            this.btnNext.Click += (sender, e) =>
+            {
+                this.Visible = false;
+                Form2 formNext = new Form2();
+                GlobleV.SecondForm = formNext;
+                formNext.Show();
+            };
+
+            this.btnGetGPS.Enabled = false;
+            this.lbl1.Visible = false;
+            this.lbl2.Visible = false;
+            this.lblLat.Visible = false;
+            this.lblLng.Visible = false;
+
+
+            this.btnGetGPS.Click += (sender, e) =>
+            {
+                GlobleV.GPS_Name = "定位点";
+
+                GlobleV.Lat = this.lblLat.Text;
+                GlobleV.Lng = this.lblLng.Text;
+
+                this.bGetGPS = true;
+                SetNextButton();
+            };
+            this.btnDefaultGPS.Click += (sender, e) =>
+            {
+                GlobleV.GPS_Name = "学校";
+
+                GlobleV.Lat = this.lblLatInternal.Text;
+                GlobleV.Lng = this.lblLngInternal.Text;
+
+                bGetGPS = true;
+                SetNextButton();
+            };
+
+            timer = new Timer();
+            timer.Interval = 10000;
+            timer.Tick += (sender, e) =>
+            {
+                timer.Enabled = false;
+                Action act = () =>
+                {
+                    this.btnGetGPS.Enabled = true;
+                    this.btnGetGPS.Text = "定位完成";
+                    this.lbl1.Visible = true;
+                    this.lbl2.Visible = true;
+                    this.lblLng.Text = "116.1";
+                    this.lblLat.Text = "39.5";
+                    this.lblLat.Visible = true;
+                    this.lblLng.Visible = true;
+                };
+                this.Invoke(act);
+            };
+            timer.Enabled = true;
         }
-
-        //void InitialCarList(int count, int totalWidth, int carboxWidth, int carboxHeight)
-        //{
-        //    //int totalWidth = this.Width;
-        //    int leftFrame = (totalWidth - carboxWidth * count - carboxWidth / 2 * (count - 1)) / 2;
-        //    for (int i = 0; i < count - 1; i++)
-        //    {
-        //        Button b = CreateNewCarBox(leftFrame, 50);
-        //        b.Text = "Car" + i.ToString();
-        //    }
-        //}
-
-        //Button CreateNewCarBox(int left, int top)
-        //{
-            //Button button1;
-            //button1 = new System.Windows.Forms.Button();
-            //// 
-            //// button1
-            //// 
-            //button1.Location = new System.Drawing.Point(left, top);
-            //button1.Name = "button1";
-            //button1.Size = new System.Drawing.Size(82, 48);
-            //button1.TabIndex = 0;
-            //button1.Text = "button1";
-            //button1.UseVisualStyleBackColor = true;
-
-            //Controls.Add(this.button1);
-
-            //return button1;
-        //}
+        void SetNextButton()
+        {
+            Action act = () =>
+            {
+                if (bGetGPS && bGetCarID)
+                {
+                    this.btnNext.Enabled = true;
+                }
+                else
+                {
+                    this.btnNext.Enabled = false;
+                }
+            };
+            if (this.InvokeRequired)
+            {
+                this.Invoke(act);
+            }
+            else
+            {
+                act();
+            }
+        }
+        void btnGetGPS_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

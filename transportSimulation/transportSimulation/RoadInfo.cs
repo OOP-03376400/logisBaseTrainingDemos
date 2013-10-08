@@ -65,11 +65,11 @@ namespace transportSimulation
                 {
                     var point = ri.PointList.First(_point => _point.IndexInList == (_GpsPoint.IndexInList + 1));
 
-                    if (point != null && this.pointRinger != null)
+                    if (this.pointRinger != null)
                     {
                         this.pointRinger(point);
-                        return point;
                     }
+                    return point;
                 }
                 else
                 {
@@ -80,7 +80,18 @@ namespace transportSimulation
                     }
                     else
                     {
-                        return Play(null, ri.NextRoadNameList[0]);
+                        //往下没路了，提醒结束
+                        if (ri.NextRoadNameList.Count <= 0)
+                        {
+                            if (pointRinger != null)
+                            {
+                                pointRinger(null);
+                            }
+                            return null;
+                        }
+                        else
+                            //第一条路
+                            return Play(null, ri.NextRoadNameList[0]);
                     }
                 }
             }
@@ -129,7 +140,7 @@ namespace transportSimulation
 
         public string FormatPointString()
         {
-            return string.Format("Index => {0}  Lat: {1}, Lng: {2}", this.IndexInList.ToString(), this.Lat.ToString(), this.Lng.ToString());
+            return string.Format("RoadName => {3}  Index : {0}  Lat: {1}, Lng: {2}", this.IndexInList.ToString(), this.Lat.ToString(), this.Lng.ToString(), this.RoadName);
         }
     }
 }
