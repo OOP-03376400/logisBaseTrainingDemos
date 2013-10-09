@@ -43,6 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblLatInternal = new System.Windows.Forms.Label();
             this.btnDefaultGPS = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -149,9 +150,9 @@
             this.lblLngInternal.AutoSize = true;
             this.lblLngInternal.Location = new System.Drawing.Point(352, 306);
             this.lblLngInternal.Name = "lblLngInternal";
-            this.lblLngInternal.Size = new System.Drawing.Size(41, 12);
+            this.lblLngInternal.Size = new System.Drawing.Size(77, 12);
             this.lblLngInternal.TabIndex = 2;
-            this.lblLngInternal.Text = "116.12";
+            this.lblLngInternal.Text = "12983703.125";
             // 
             // label10
             // 
@@ -167,9 +168,9 @@
             this.lblLatInternal.AutoSize = true;
             this.lblLatInternal.Location = new System.Drawing.Point(352, 328);
             this.lblLatInternal.Name = "lblLatInternal";
-            this.lblLatInternal.Size = new System.Drawing.Size(35, 12);
+            this.lblLatInternal.Size = new System.Drawing.Size(83, 12);
             this.lblLatInternal.TabIndex = 2;
-            this.lblLatInternal.Text = "39.56";
+            this.lblLatInternal.Text = "4827636.71875";
             // 
             // btnDefaultGPS
             // 
@@ -180,11 +181,22 @@
             this.btnDefaultGPS.Text = "学校";
             this.btnDefaultGPS.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(65, 449);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 510);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDefaultGPS);
             this.Controls.Add(this.btnGetGPS);
             this.Controls.Add(this.btnNext);
@@ -224,6 +236,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblLatInternal;
         private System.Windows.Forms.Button btnDefaultGPS;
+        private System.Windows.Forms.Button button1;
 
 
 

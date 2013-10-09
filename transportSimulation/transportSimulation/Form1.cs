@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using httpHelper;
 using MetroFramework.Forms;
 
 namespace transportSimulation
@@ -77,6 +78,14 @@ namespace transportSimulation
             };
             timer.Enabled = true;
         }
+
+        void postjson()
+        {
+            HttpWebConnect http = new HttpWebConnect();
+            GPSPoint gps = new GPSPoint(4827636.71875, 12983703.125, "11");
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(gps);
+            http.TryPostData("http://localhost:3000/postRawGPS", json);
+        }
         void SetNextButton()
         {
             Action act = () =>
@@ -102,6 +111,11 @@ namespace transportSimulation
         void btnGetGPS_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            postjson();
         }
     }
 }

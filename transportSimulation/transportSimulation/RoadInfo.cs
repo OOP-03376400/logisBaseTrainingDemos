@@ -47,10 +47,16 @@ namespace transportSimulation
                 }
                 else
                 {
-                    riTemp = RoadList.First(_ri => { return _ri.RoadName == _roadName; });
+                    riTemp = RoadList.Find(_ri => { return _ri.RoadName == _roadName; });
                 }
-                if (riTemp == null) return null;
-
+                if (riTemp == null)
+                {
+                    if (pointRinger != null)
+                    {
+                        pointRinger(null);
+                    }
+                    return null;
+                }
                 if (RoadSelectRinger != null)
                 {
                     RoadSelectRinger(riTemp.NextRoadNameList);
@@ -131,11 +137,15 @@ namespace transportSimulation
         public double Lng = 0.0;
 
         public int IndexInList = 0;
+        public string type = "sogou";
         public string RoadName = string.Empty;
-        public GPSPoint(double _lat, double _lng)
+        public string carID = string.Empty;
+        public GPSPoint(double _lat, double _lng, string _id = "", string _roadName = "", string _type = "sogou")
         {
             this.Lat = _lat;
             this.Lng = _lng;
+            this.RoadName = _roadName;
+            this.carID = _id;
         }
 
         public string FormatPointString()
