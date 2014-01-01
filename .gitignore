@@ -1,2 +1,7 @@
 obj
-
+*.pdb
+*.manifest
+/仓库监控系统/zigbee_controler/bin/Debug/*.pdb
+*.manifest
+*.manifest
+*.pdb
