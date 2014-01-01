@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<nsConfig>
+  <config>
+    <key>serialport</key>
+    <value>COM4</value>
+  </config>
+  <config>
+    <key>restIP</key>
+    <value>127.0.0.1</value>
+  </config>
+  <config>
+    <key>restPort</key>
+    <value>9002</value>
+  </config>
+  <config>
+    <key>temp</key>
+    <value>11</value>
+  </config>
+  <config>
+    <key>humi</key>
+    <value>21</value>
+  </config>
+</nsConfig>

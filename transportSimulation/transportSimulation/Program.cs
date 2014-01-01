@@ -10,6 +10,7 @@ namespace transportSimulation
         public static string Destnation = string.Empty;
 
         public static string CarID = "京A 12345";
+        public static string Secret = string.Empty;
 
         public static string GPS_Name = string.Empty;
         public static string Lat = string.Empty;
@@ -18,6 +19,8 @@ namespace transportSimulation
         public static Form1 FirstForm = null;
         public static Form2 SecondForm = null;
         public static Form3 ThirdForm = null;
+
+        public static string temp = "1155";
     }
 
     static class Program

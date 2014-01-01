@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="yes"?>
+<nsConfig>
+  <config>
+    <key>serialport</key>
+    <value>COM4</value>
+  </config>
+</nsConfig>

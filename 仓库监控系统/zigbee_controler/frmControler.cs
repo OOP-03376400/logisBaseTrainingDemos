@@ -1,5 +1,5 @@
-﻿#define UDP_TRANSE
-//#define SERIAL_PORT_TRANSE
+﻿//#define UDP_TRANSE
+#define SERIAL_PORT_TRANSE
 
 using System;
 using System.Collections.Generic;
@@ -450,6 +450,7 @@ namespace zigbee_controler
 
             comport.DataReceived -= port_DataReceived;
             comport.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);
+            comport.Open();
 #endif
 #if UDP_TRANSE
             initial_udp_server();

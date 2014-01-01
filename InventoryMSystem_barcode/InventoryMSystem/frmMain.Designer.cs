@@ -236,14 +236,14 @@
             // 编辑标签ToolStripMenuItem
             // 
             this.编辑标签ToolStripMenuItem.Name = "编辑标签ToolStripMenuItem";
-            this.编辑标签ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.编辑标签ToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.编辑标签ToolStripMenuItem.Text = "编辑条码(&E)";
             this.编辑标签ToolStripMenuItem.Click += new System.EventHandler(this.编辑标签ToolStripMenuItem_Click);
             // 
             // 测试ToolStripMenuItem
             // 
             this.测试ToolStripMenuItem.Name = "测试ToolStripMenuItem";
-            this.测试ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.测试ToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.测试ToolStripMenuItem.Text = "测试";
             this.测试ToolStripMenuItem.Visible = false;
             // 
@@ -296,7 +296,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " 仓储管理信息系统";
+            this.Text = " 条码仓储管理信息系统";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

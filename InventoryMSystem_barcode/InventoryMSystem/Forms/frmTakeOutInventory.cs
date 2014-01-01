@@ -220,6 +220,8 @@ namespace InventoryMSystem
         void frmTakeOutInventory_FormClosing(object sender, FormClosingEventArgs e)
         {
             //this.closeSerialPort();
+            this.beforeClosing();
+            //this.Close();
         }
         void UpdateEpcList(object o)
         {
@@ -370,27 +372,31 @@ namespace InventoryMSystem
             }
             return bEnough;
         }
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            this.beforeClosing();
+            this.Close();
+        }
+        private void beforeClosing()
+        {
+            //this.rmu900Helper.StopInventory();
+            barcode_reader_helper.stop();
+            this.closeSerialPort();
+        }
         private void closeSerialPort()
         {
-            //this.operateUnitStartGetTag.closeSerialPort();
-            //bool bOk = _UpdateList.ChekcAllItem();
+            //bool bOk = false;
             //// 如果没有全部完成，则要将消息处理让出，使Invoke有机会完成
             //while (!bOk)
             //{
             //    Application.DoEvents();
-            //    bOk = _UpdateList.ChekcAllItem();
+            //    bOk = true;
             //}
-            //if (this.bGettingTag)
-            //{
-            //    this.operateUnitStopGetTag.OperateStart(true);
-            //}
+            if (this.comport != null)
+            {
+                this.comport.Close();
+            }
         }
-        private void btnQuit_Click(object sender, EventArgs e)
-        {
-            this.closeSerialPort();
-            this.Close();
-        }
-
         private void btnGetP_Click(object sender, EventArgs e)
         {
             if (this.bGettingTag)

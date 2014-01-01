@@ -40,7 +40,7 @@ namespace FactorySystem
             set { Num = value; }
 
         }
-
+        bool alreadyWriteSuccess = false;
         public frmTiebiao()
         {
             InitializeComponent();
@@ -161,6 +161,7 @@ namespace FactorySystem
         private void button1_Click(object sender, EventArgs e)
         {
             string strID = txtEpc.Text.Trim();
+            this.alreadyWriteSuccess = false;
             this.writeTag(strID);
         }
 
@@ -277,9 +278,11 @@ namespace FactorySystem
 
         public void NewMessageArrived()
         {
+            if (this.alreadyWriteSuccess == true) return;
             string r3 = rmu900Helper.CheckWriteEpc();
             if (r3 != string.Empty)
             {
+                this.alreadyWriteSuccess = true;
                 AudioAlert.PlayAlert();
                 Debug.WriteLine("写入标签成功 " + r3);
                 addTieBiao();

@@ -1,4 +1,7 @@
-﻿using System;
+﻿#define LOCAL_READER
+//#define REMOTE_READER
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +21,10 @@ namespace InventoryMSystem
         InvokeDic _UpdateList = new InvokeDic();
         //TakeOutInventoryCtl ctlTakeOutInventory = new TakeOutInventoryCtl();
         string __lastTagTimeStamp = string.Empty;
+
+#if REMOTE_READER
         Timer __timer;
+#endif
 
         bool bGettingTag = false;//是否正在获取标签
 
@@ -26,9 +32,12 @@ namespace InventoryMSystem
         {
             InitializeComponent();
 
+#if REMOTE_READER
             __timer = new Timer();
             __timer.Interval = 1000;
             __timer.Tick += new EventHandler(__timer_Tick);
+#endif
+
 
             this.FormClosing += new FormClosingEventHandler(frmTakeOutInventory_FormClosing);
             this.Shown += new EventHandler(frmTakeOutInventory_Shown);
@@ -489,28 +498,44 @@ namespace InventoryMSystem
                 this.bGettingTag = false;
                 this.btnGetP.Text = "扫描";
 
+#if REMOTE_READER
                 this.__timer.Enabled = false;
+#endif
 
+#if LOCAL_READER
                 //本地标签扫描
-                //this.operateUnitStartGetTag.closeSerialPort();
-                //this.operateUnitStopGetTag.OperateStart(true);
+                this.operateUnitStartGetTag.closeSerialPort();
+                this.operateUnitStopGetTag.OperateStart(true);
+#endif
+                
             }
             else
             {
                 this.bGettingTag = true;
                 this.btnGetP.Text = "停止";
+
+#if REMOTE_READER
                 //通过网络获取标签
                 __lastTagTimeStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 this.__timer.Enabled = true;
 
+#endif
+
+#if LOCAL_READER
                 //本地标签扫描
-                //this.operateUnitStartGetTag.OperateStart();
+                this.operateUnitStartGetTag.OperateStart();                
+#endif
+                
+
             }
         }
 
         private void btnStartCheck_Click(object sender, EventArgs e)
         {
+#if REMOTE_READER
             this.__timer.Enabled = false;
+
+#endif
             this.bGettingTag = false;
             this.btnGetP.Text = "扫描";
             this.btnStartCheck.Enabled = false;

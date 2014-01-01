@@ -140,17 +140,30 @@ namespace transportSimulation
         public string type = "sogou";
         public string RoadName = string.Empty;
         public string carID = string.Empty;
-        public GPSPoint(double _lat, double _lng, string _id = "", string _roadName = "", string _type = "sogou")
+        public string secret = string.Empty;
+
+        public GPSPoint(double _lat, double _lng, string _id = "", string _roadName = "", string _type = "sogou", string _secret = "")
         {
             this.Lat = _lat;
             this.Lng = _lng;
             this.RoadName = _roadName;
             this.carID = _id;
+            this.type = _type;
+            this.secret = _secret;
         }
 
         public string FormatPointString()
         {
             return string.Format("RoadName => {3}  Index : {0}  Lat: {1}, Lng: {2}", this.IndexInList.ToString(), this.Lat.ToString(), this.Lng.ToString(), this.RoadName);
         }
+    }
+
+    public class CarInfo
+    {
+        public string carID = string.Empty;
+        public int userCount = 0;
+        public string secret = string.Empty;
+        //public GPSPoint point = null;
+        public CarInfo() { }
     }
 }

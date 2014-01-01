@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<TMyControlList>
+<TMyControl ControlName="1ºÅÏÔÊ¾ÆÁ" DBColor="1" PNO="1" ControlWidth="256" ControlHeiht="128">
+<ProgramList>
+<TMyProgram ID="1" PlayTime="0">
+<TMyMeta MetaNo="1" MetaType="File" Left="0" Top="0" Width="96" Height="16">
+<File FileNo="1" MetaType="File" FileName="C:\Users\Dammon\Desktop\FactorySystem8\FactorySystem\bin\Debug\1.rtf" Width="64" Height="32" playstyle="32" QuitStyle="255" playspeed="100" delay="2" MidText="1"/>
+</TMyMeta>
+</TMyProgram>
+</ProgramList>
+</TMyControl>
+</TMyControlList>

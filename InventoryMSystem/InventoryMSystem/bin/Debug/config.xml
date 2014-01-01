@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<nsConfig>
+  <config>
+    <key>ip</key>
+    <value>127.0.0.1</value>
+  </config>
+  <config>
+    <key>tcp_port</key>
+    <value>9002</value>
+  </config>
+</nsConfig>

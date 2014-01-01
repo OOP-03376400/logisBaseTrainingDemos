@@ -218,7 +218,6 @@
             this.订单管理ToolStripMenuItem.Name = "订单管理ToolStripMenuItem";
             this.订单管理ToolStripMenuItem.Size = new System.Drawing.Size(86, 21);
             this.订单管理ToolStripMenuItem.Text = "订单管理(&O)";
-            this.订单管理ToolStripMenuItem.Visible = false;
             // 
             // 管理订单ToolStripMenuItem
             // 
@@ -235,7 +234,6 @@
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
             this.设置ToolStripMenuItem.Size = new System.Drawing.Size(88, 21);
             this.设置ToolStripMenuItem.Text = "标签管理(&M)";
-            this.设置ToolStripMenuItem.Visible = false;
             // 
             // 编辑标签ToolStripMenuItem
             // 
@@ -318,7 +316,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " 超市库存管理信息系统";
+            this.Text = " UHF库存管理信息系统";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

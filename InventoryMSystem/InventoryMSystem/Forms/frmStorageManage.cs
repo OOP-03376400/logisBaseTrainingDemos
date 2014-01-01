@@ -1,4 +1,7 @@
-﻿using System;
+﻿#define LOCAL_READER
+//#define REMOTE_READER
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -364,23 +367,33 @@ namespace InventoryMSystem
             {
                 this.bGettingTag = false;
                 this.btnGetTag.Text = "扫描";
+
+#if REMOTE_READER
                 //停止通过网络获取标签
                 this.__timer.Enabled = false;
+#endif
 
+#if LOCAL_READER
                 //本地扫描标签，不通过网络
-                //this.operateUnitStartGetTag.closeSerialPort();
-                //this.operateUnitStopGetTag.OperateStart(true);
+                this.operateUnitStartGetTag.closeSerialPort();
+                this.operateUnitStopGetTag.OperateStart(true);
+#endif
+
             }
             else
             {
                 this.bGettingTag = true;
                 this.btnGetTag.Text = "停止";
+#if REMOTE_READER
                 //开始通过网络获取标签
                 __lastTagTimeStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 this.__timer.Enabled = true;
-
+#endif
+#if LOCAL_READER
                 //本地扫描标签，不通过网络
-                //this.operateUnitStartGetTag.OperateStart();
+                this.operateUnitStartGetTag.OperateStart();
+#endif
+
             }
         }
         private void btnStorageP_Click(object sender, EventArgs e)
@@ -413,7 +426,7 @@ namespace InventoryMSystem
         }
         void helper_RequestCompleted_addProductToStorage(object o)
         {
-            
+
             string strProducts = (string)o;
             Debug.WriteLine(
                 string.Format("frmStorageManage.helper_RequestCompleted_addProductToStorage  ->  = {0}"
@@ -443,7 +456,7 @@ namespace InventoryMSystem
             //        string epc = (string)cepc.Value;
             //        ctl.SetProductNotInStorage(epc);
             //        /* 
-                    
+
             //        Debug.WriteLine(string.Format(
             //                    "btnDeleteStoragedP_Click -> Select Index = {0}"
             //                    , cbc.RowIndex.ToString()));

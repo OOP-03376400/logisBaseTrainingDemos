@@ -352,6 +352,7 @@ namespace InventoryMSystem
         private void beforeClosing()
         {
             //this.rmu900Helper.StopInventory();
+            barcode_reader_helper.stop();
             this.closeSerialPort();
         }
         private void closeSerialPort()

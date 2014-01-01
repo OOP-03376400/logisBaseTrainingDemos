@@ -85,9 +85,9 @@ namespace transportSimulation
         void postjson(double _lng, double _lat, string type = "sogou")
         {
             HttpWebConnect http = new HttpWebConnect();
-            GPSPoint gps = new GPSPoint(_lat, _lng, "11");
+            GPSPoint gps = new GPSPoint(_lat, _lng, GlobleV.CarID, currentRoadName, type, GlobleV.Secret);
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(gps);
-            http.TryPostData("http://localhost:3000/postRawGPS", json);
+            http.TryPostData("http://localhost:3000/postgps", json);
         }
         void stopRunning()
         {

@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="yes"?>
+<nsConfig>
+  <config>
+    <key>serialPortName</key>
+    <value>com25</value>
+  </config>
+</nsConfig>

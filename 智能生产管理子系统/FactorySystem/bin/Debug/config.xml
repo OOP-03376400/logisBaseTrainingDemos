@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes"?>
+<nsConfig>
+  <config>
+    <key>name</key>
+    <value>COM5</value>
+  </config>
+  <config>
+    <key>cmbBaudRate</key>
+    <value>57600</value>
+  </config>
+  <config>
+    <key>IP</key>
+    <value>192.168.1.3</value>
+  </config>
+  <config>
+    <key>textBoxname</key>
+    <value>生产企业A                                             </value>
+  </config>
+  <config>
+    <key>textBoxID</key>
+    <value>12345     </value>
+  </config>
+  <config>
+    <key>textBoxdaibiao</key>
+    <value>A                                                 </value>
+  </config>
+  <config>
+    <key>cmbcategory</key>
+    <value>生产企业</value>
+  </config>
+  <config>
+    <key>connect</key>
+    <value>A</value>
+  </config>
+  <config>
+    <key>address</key>
+    <value>A</value>
+  </config>
+  <config>
+    <key>richTextBoxBZ</key>
+    <value>bbbbbb</value>
+  </config>
+  <config>
+    <key>zigbee</key>
+    <value>1</value>
+  </config>
+  <config>
+    <key>wendu</key>
+    <value>23</value>
+  </config>
+  <config>
+    <key>shidu</key>
+    <value>21</value>
+  </config>
+  <config>
+    <key>ledIP</key>
+    <value>192.168.1.99</value>
+  </config>
+  <config>
+    <key>serialport</key>
+    <value>COM25</value>
+  </config>
+  <config>
+    <key>restIP</key>
+    <value>127.0.0.1</value>
+  </config>
+  <config>
+    <key>restPort</key>
+    <value>9002</value>
+  </config>
+  <config>
+    <key>zigbee_id</key>
+    <value>00158D0000002893</value>
+  </config>
+</nsConfig>

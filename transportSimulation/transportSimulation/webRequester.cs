@@ -148,6 +148,8 @@ namespace httpHelper
 
         public void TryPostData(string url, string postData)
         {
+            Debug.WriteLine("try post =>");
+            Debug.WriteLine(postData);
             this.Url = url;
             this.isGet = false;
             this.postData = postData;
@@ -168,8 +170,8 @@ namespace httpHelper
                     {
                         UTF8Encoding enc = new UTF8Encoding();
                         byte[] bs = enc.GetBytes(this.postData);
-                        myHttpWebRequest.ContentType = "text/json";
-                        //myHttpWebRequest.ContentType = "text/xml";
+                        //myHttpWebRequest.ContentType = "text/json";
+                        myHttpWebRequest.ContentType = "application/json;charset=utf-8";
                         myHttpWebRequest.ContentLength = bs.Length;
                     }
                     else
@@ -232,12 +234,13 @@ namespace httpHelper
                 // Create an instance of the RequestState and assign the previous myHttpWebRequest
                 // object to its request field.  
 
-                //myRequestState.request = myHttpWebRequest;
+                RequestState myRequestState = new RequestState();
+                myRequestState.request = myHttpWebRequest;
 
                 // Start the asynchronous request.
 
-                //IAsyncResult result =
-                //  (IAsyncResult)myHttpWebRequest.BeginGetResponse(new AsyncCallback(RespCallback), myRequestState);
+                IAsyncResult result =
+                  (IAsyncResult)myHttpWebRequest.BeginGetResponse(new AsyncCallback(RespCallback), myRequestState);
 
             }
             catch (Exception e)

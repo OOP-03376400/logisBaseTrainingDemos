@@ -21,6 +21,8 @@ namespace transportSimulation
         {
             InitializeComponent();
 
+            this.Shown += Form1_Shown;
+
             this.btnNext.Enabled = false;
             this.btnNext.Click += (sender, e) =>
             {
@@ -79,12 +81,42 @@ namespace transportSimulation
             timer.Enabled = true;
         }
 
+        void Form1_Shown(object sender, EventArgs e)
+        {
+            HttpWebConnect http = new HttpWebConnect();
+            http.RequestCompleted += (o) =>
+            {
+                string str = (string)o;
+                object oci = Newtonsoft.Json.JsonConvert.DeserializeObject<CarInfo>(str);
+                CarInfo ci = (CarInfo)oci;
+                if (ci != null)
+                {
+                    GlobleV.CarID = ci.carID;
+                    GlobleV.Secret = ci.secret;
+
+                    Action act = () =>
+                    {
+                        this.lblCarID.Text = GlobleV.CarID;
+                    };
+                    this.Invoke(act);
+                }
+            };
+            http.TryRequest("http://localhost:3000/getDistributeCarID");
+        }
+
+
+
         void postjson()
         {
             HttpWebConnect http = new HttpWebConnect();
-            GPSPoint gps = new GPSPoint(4827636.71875, 12983703.125, "11");
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(gps);
-            http.TryPostData("http://localhost:3000/postRawGPS", json);
+            string s = "1381410529249";
+            string s2 = GlobleV.Secret.ToString();
+            GPSPoint gps1 = new GPSPoint(0.1, 0.2, "11", "22", "33", s2);
+            GPSPoint gps2 = new GPSPoint(4827636.71875, 12983703.125, "11");
+            string json1 = Newtonsoft.Json.JsonConvert.SerializeObject(gps1);
+            string json2 = Newtonsoft.Json.JsonConvert.SerializeObject(gps2);
+            http.TryPostData("http://localhost:3000/postgps", json1);
+            http.TryPostData("http://localhost:3000/postgps", json2);
         }
         void SetNextButton()
         {
